@@ -1,34 +1,15 @@
 void main() {
-  int a = 10;
-  int b = 5;
-  int c = 8;
-  int d = 3;
+  int score = 55;
 
-  if (a == b && b == c && c == d) {
-    print("Yig'indisi: a + b + c + d = ${a + b + c + d}");
+  if (score >= 0 && score <= 54) {
+    print('2 - baho');
+  } else if (score >= 55 && score <= 70) {
+    print('3 - baho');
+  } else if (score >= 71 && score <= 84) {
+    print('4 - baho');
+  } else if (score>= 85 && score <= 100) {
+    print('5 - baho');
   } else {
-    int minNum = a;
-    int maxNum = a;
-
-    if (maxNum < b) {
-      maxNum = b;
-    }
-    if (maxNum < c) {
-      maxNum = c;
-    }
-    if (maxNum < d) {
-      maxNum = d;
-    }
-
-    if (b < minNum) {
-      minNum = b;
-    }
-    if (c < minNum) {
-      minNum = c;
-    }
-    if (d < minNum) {
-      minNum = d;
-    }
-    print("Kattadan kichigi ayirma: ${maxNum - minNum}");
+    print('Faqat 0 - 100 ball gacha');
   }
 }
