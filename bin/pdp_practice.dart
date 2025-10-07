@@ -1,13 +1,13 @@
 void main() {
-  int n = 12;
-  int i = 1;
-  
+  int n = 1234;
+  int temp = n;
+  int total = 0;
 
   do {
-    if (n % i == 0) {
-      print('$i - bolinadi');
-    }
-    i++;
-  } while (i <= n);
+    print('n: $temp oxirgi raqam ${temp % 10}');
+    total += temp % 10;
+    // updation
+    temp ~/= 10;
+  } while (temp > 0);
   print('natija: $n');
 }
