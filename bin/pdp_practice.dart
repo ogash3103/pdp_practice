@@ -1,12 +1,12 @@
 void main() {
-  int n = 0;
-  int sum = 0;
-  while (n <= 20) {
-    if (n % 2 == 0) {
-      sum += n;
-      print(n);
-      print(sum);
-    }
-    n++;
+  int n = 12;
+  int i = 1;
+
+  while (i <= n) {
+    if (n % i == 0) {
+      print('$i - ga bolinadi');
+    } 
+    i++;
   }
+  print('dastur yakunlandi');
 }
