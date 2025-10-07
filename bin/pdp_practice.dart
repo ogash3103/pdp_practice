@@ -1,10 +1,13 @@
 void main() {
-  int n = 1;
+  int n = 20;
   int sum = 0;
 
   do {
-    sum += n;
-    n++;
-  } while (n <= 25);
-  print('N: $sum');
+    if (n % 2 == 0) {
+      sum += n;
+      print('N: $n');
+    }
+    n--;
+  } while (n >= 1);
+  print('natija: $sum');
 }
