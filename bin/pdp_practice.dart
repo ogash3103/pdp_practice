@@ -1,13 +1,13 @@
 void main() {
-  int n = 20;
-  int sum = 0;
+  int n = 12;
+  int i = 1;
+  
 
   do {
-    if (n % 2 == 0) {
-      sum += n;
-      print('N: $n');
+    if (n % i == 0) {
+      print('$i - bolinadi');
     }
-    n--;
-  } while (n >= 1);
-  print('natija: $sum');
+    i++;
+  } while (i <= n);
+  print('natija: $n');
 }
