@@ -1,8 +1,12 @@
 void main() {
-  int n = 10;
-  while (n >= 1) {
-    n--;
-    print(n);
+  int n = 0;
+  int sum = 0;
+  while (n <= 20) {
+    if (n % 2 == 0) {
+      sum += n;
+      print(n);
+      print(sum);
+    }
+    n++;
   }
-  
 }
