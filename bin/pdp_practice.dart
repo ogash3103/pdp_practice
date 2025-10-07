@@ -1,12 +1,14 @@
 void main() {
-  int n = 12;
-  int i = 1;
+  int n = 1234;
+  int total = 0;
+  int temp = n;
+  while (temp > 0) {
+    print('n: $temp oxirgi raqam ${temp % 10}');
+    total += temp % 10;
 
-  while (i <= n) {
-    if (n % i == 0) {
-      print('$i - ga bolinadi');
-    } 
-    i++;
+    // updation
+    temp ~/= 10;
   }
-  print('dastur yakunlandi');
+
+  print('$n sonining yigindisi $total');
 }
