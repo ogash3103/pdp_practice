@@ -1,24 +1,27 @@
-int ekub(int a, int b) {
-  a = a.abs();
-  b = b.abs();
+void main() {
+  int sum = 0;
+  for (int i = 100; i <= 999; i++) {
+    int birlik = i % 10;
+    int onlik = (i ~/ 10) % 10;
+    int yuzlik = i ~/ 100;
 
-  if (a == 0 && b == 0) {
-    throw ArgumentError('EKUB(0,0) aniqlanmagan');
+    sum = birlik + onlik + yuzlik;
+    if (sum == 10) {
+      print("$birlik + $onlik + $yuzlik = $sum");
+    }
   }
-  if (a == 0) return b;
-  if (b == 0) return a;
+  
 
-  while (b != 0) {
-    final r = a % b;
-    a = b;
-    b = r;
+  List<int> sonlar = [5, 8, 12, 3, 9];
+  int i = 1;
+  int max = sonlar[0];
+
+  while (i < sonlar.length) {
+    if (sonlar[i] > max) {
+      max = sonlar[i];
+    }
+    i++;
   }
-  return a;
-}
 
-void main()
-{
-  print(ekub(48, 18));  
-  print(ekub(54, 24));   
-  print(ekub(0, 25)); 
+  print("Eng katta son: $max");
 }
