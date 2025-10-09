@@ -1,5 +1,6 @@
 void main() {
-  int n = 12345;
+  int n = 12321;
+  int orginal = n;
   int reverse = 0;
 
   while (n > 0) {
@@ -9,4 +10,10 @@ void main() {
   }
 
   print(reverse);
+
+  if (reverse == orginal) {
+    print('ture');
+  } else {
+    print('false');
+  }
 }
