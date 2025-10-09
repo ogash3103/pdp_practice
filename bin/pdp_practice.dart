@@ -1,19 +1,24 @@
-void main() {
-  int n = 12321;
-  int orginal = n;
-  int reverse = 0;
+int ekub(int a, int b) {
+  a = a.abs();
+  b = b.abs();
 
-  while (n > 0) {
-    int lastDigit = n % 10;
-    reverse = reverse * 10 + lastDigit;
-    n ~/= 10;
+  if (a == 0 && b == 0) {
+    throw ArgumentError('EKUB(0,0) aniqlanmagan');
   }
+  if (a == 0) return b;
+  if (b == 0) return a;
 
-  print(reverse);
-
-  if (reverse == orginal) {
-    print('ture');
-  } else {
-    print('false');
+  while (b != 0) {
+    final r = a % b;
+    a = b;
+    b = r;
   }
+  return a;
+}
+
+void main()
+{
+  print(ekub(48, 18));  
+  print(ekub(54, 24));   
+  print(ekub(0, 25)); 
 }
