@@ -1,17 +1,10 @@
 void main() {
-  int a = 35;
-  int sum = 0;
-  int count = 0;
-  int result = 0;
+  int a = 2;
+  int n = 6;
+  int result = 1;
 
-  for (int i = 0; i <= a; i++) {
-    if (i % 5 == 0) sum += i;
-  }
-  print(sum);
-
-  while (count <= 35) {
-    if (count % 5 == 0) result += count;
-    count++;
+  for (int i = 1; i <= n; i++) {
+    result *= a;
   }
   print(result);
 }
