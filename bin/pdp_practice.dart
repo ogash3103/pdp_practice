@@ -1,27 +1,11 @@
 void main() {
-  int sum = 0;
-  for (int i = 100; i <= 999; i++) {
-    int birlik = i % 10;
-    int onlik = (i ~/ 10) % 10;
-    int yuzlik = i ~/ 100;
+  int week = 4;
+  int day = 7;
 
-    sum = birlik + onlik + yuzlik;
-    if (sum == 10) {
-      print("$birlik + $onlik + $yuzlik = $sum");
+  for (int i = 1; i <= week; i++) {
+    print('week $i');
+    for (int j = 1; j <= day; j++) {
+      print("\t day: $j");
     }
   }
-  
-
-  List<int> sonlar = [5, 8, 12, 3, 9];
-  int i = 1;
-  int max = sonlar[0];
-
-  while (i < sonlar.length) {
-    if (sonlar[i] > max) {
-      max = sonlar[i];
-    }
-    i++;
-  }
-
-  print("Eng katta son: $max");
 }
