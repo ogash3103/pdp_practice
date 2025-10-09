@@ -1,16 +1,12 @@
 void main() {
-  int n = 7;
-  int count = 0;
-  if (n <= 1) print('tup son emas');
+  int n = 12345;
+  int reverse = 0;
 
-  for (int i = 1; i <= n; i++) {
-    if (n % i == 0) {
-      count++;
-    }
+  while (n > 0) {
+    int lastDigit = n % 10;
+    reverse = reverse * 10 + lastDigit;
+    n ~/= 10;
   }
 
-  if (count == 2)
-   { print('tup son ture');}
-  else
-    {print('tup son emas false');}
+  print(reverse);
 }
