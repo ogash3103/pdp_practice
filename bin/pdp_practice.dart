@@ -1,10 +1,16 @@
 void main() {
-  int a = 2;
-  int n = 6;
-  int result = 1;
+  int n = 7;
+  int count = 0;
+  if (n <= 1) print('tup son emas');
 
   for (int i = 1; i <= n; i++) {
-    result *= a;
+    if (n % i == 0) {
+      count++;
+    }
   }
-  print(result);
+
+  if (count == 2)
+   { print('tup son ture');}
+  else
+    {print('tup son emas false');}
 }
