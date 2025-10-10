@@ -22,7 +22,17 @@ void main() {
     }
   }
 
-  //c) 1 dan 100 gacha bo‘lgan toq sonlar ichidan 
-  //3 ga bo’linadigan ammo 
+  //c) 1 dan 100 gacha bo‘lgan toq sonlar ichidan
+  //3 ga bo’linadigan ammo
   //5 ga bo‘linmaydigan sonlarning yig’indisini hisoblovchi dastur tuzing.
+  int num = 1;
+  int sum = 0;
+  while (num <= 100) {
+    if (num % 3 == 0 && num % 5 != 0 && num % 2 != 0) {
+      sum += num;
+    }
+    num++;
+  }
+
+  print(sum);
 }
