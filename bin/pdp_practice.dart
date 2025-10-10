@@ -19,16 +19,38 @@ void main() {
 //For-in loopdan foydalaning va sikllar sonini
 //kamaytirish uchun break kalitso’zini ishlating.
 
+ //3. List list = [44, 58, 67, 80, 33, 13, 28, 37, 76, 82];
+  //va n soni berilgan. Shu listdagi n - indexdagi elementi
+  // topuvchi dastur tuzing.
+  //Listni o’ziga tegishli methoddan foydalanmang.
+
   List list = [65, 31, 87, 5, 99, 47, 79, 105, 34, 45];
   int n = 31;
   bool found = false;
 
   for (var e in list) {
     if (e == n) {
-      found = true;
+      
       break;
     }
   }
 
+  for (int i = 0; i < list.length; i++) {
+    if (list[i] == n) {
+      print('$n listning $i - indexda joylashgan');
+      found = true;
+      break;
+    } 
+  }
+
+  if(!found)
+  {
+    print('$n soni listda mavjud emas');
+  }
+
   print(found);
+
+ 
+
+  
 }
