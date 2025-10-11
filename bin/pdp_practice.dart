@@ -51,5 +51,17 @@ void main() {
     b = next;
   }
 
-  
+  print('===========');
+
+  //e) Barcha 2 xonali sonlar ichida kamida 1 ta raqami
+  // 8 bo’lgan barcha sonlarni ekranga chiqaruvchi dastur tuzing.
+
+  for (int i = 10; i <= 99; i++) {
+    int birlik = i % 10;
+    int onlik = i ~/ 10;
+
+    if (birlik == 8 || onlik == 8) {
+      print(i);
+    }
+  }
 }
