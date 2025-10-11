@@ -1,7 +1,7 @@
 void main() {
   //a) Bir kg konfetning narxi berilgan (haqiqiy son). 1.2, 1.4, ...,
   //2 kg konfetni narxini chiqaruvchi dastur tuzilsin.
-  double p = 25000;
+  /*double p = 25000;
   double x = 1.2;
 
   while (x <= 2.0) {
@@ -34,5 +34,22 @@ void main() {
     num++;
   }
 
-  print(sum);
+  print(sum);*/
+
+  //d)  Berilgan songacha bo’lgan fibonachi
+  //sonlarini console ga chiqaruvchi dastur tuzing.
+
+  int limit = 30;
+
+  int a = 0;
+  int b = 1;
+
+  while (a <= limit) {
+    print(a);
+    int next = a + b;
+    a = b;
+    b = next;
+  }
+
+  
 }
