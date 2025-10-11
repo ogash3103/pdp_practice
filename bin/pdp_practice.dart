@@ -64,4 +64,25 @@ void main() {
       print(i);
     }
   }
+  print('==============');
+  //n va k butun sonlari berilgan.
+  //Faqat ayirish, qo’shish hamda loopdan foydalanib,
+  //n sonini k ga bo’lgandagi qoldiq va
+  //butun qismini ekranga chiqaruvchi dastur tuzilsin.
+
+  int n = 12;
+  int k = 34;
+  int q = 0;
+
+  if (n % 2 == 0 || k % 2 == 0) {
+    while (n >= k) {
+      n -= k;
+      q += 1;
+    }
+  } else {
+    print('butun son emas');
+  }
+
+  print('Butun qism: $q');
+  print('Qoldiq: $n');
 }
