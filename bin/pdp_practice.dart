@@ -33,4 +33,19 @@ void main() {
     sum += sign * (1 + i / 10);
   }
   print('Yig‘indi: ${sum.toStringAsFixed(4)}');
+
+  print('===========');
+
+  //d) n butun soni berilgan (n > 0).
+  //Shu sonning kvadratini quyidagi formula asosida
+  //hisoblovchi dastur tuzilsin. n^2 = 1 + 3 + 5 + … + (2*n - 1);
+  //Maslahat: har bir qo'shiluvchidan keyin
+  //natijani ekranga chiqarib boring.
+  //Natijada ekranda 1 dan n gacha bo'lgan sonlar kvadrati chigariladi
+
+  int count = 0;
+  for (int i = 1; i <= n; i++) {
+    count += (2 * i - 1);
+    print('$i ning kvadrati = $count');
+  }
 }
