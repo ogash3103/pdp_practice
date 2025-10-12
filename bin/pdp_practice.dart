@@ -1,11 +1,22 @@
 void main() {
-  int n = 6;
-
-  for (int i = 1; i <= n; i++) {
-    String line = '';
-    for (int j = 1; j <= i; j++) {
-      line += '$j';
-    }
-    print(line);
-  }
+  print(tub(5));
 }
+// tub son topish method
+bool tub(int son) {
+  bool tubSon = true;
+  if (son <= 1) {
+    tubSon = false;
+  } else {
+    for (int i = 2; i <= son; i++) {
+      if (son % 2 == 0) {
+        tubSon = false;
+        break;
+      }
+    }
+  }
+  return tubSon;
+}
+
+// Berilgan sonni teskarisini chiqaruvchi return type li funksiya
+
+
