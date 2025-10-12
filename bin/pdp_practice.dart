@@ -1,32 +1,23 @@
 void main() {
-  print(ekub(48, 18));
-  print(ekuk(48, 18));
+  tubSon(45);
 }
 
-//Kiritilgan a va b sonni
-//EKUB va EKUK ini hisoblovchi ikkita return type li funksiya
+void tubSon(int n) {
+  for (int i = 2; i <= n; i++) {
+    bool tub = true;
 
-int ekub(int a, int b) {
-  a = a.abs();
-  b = b.abs();
+    for (int j = 2; j < i; j++) {
+      if (i % j == 0) {
+        tub = false;
+        break;
+      }
+    }
 
-  if (a == 0 && b == 0) return 0;
-
-  while (b != 0) {
-    int r = a % b;
-    a = b;
-    b = r;
+    if (tub) {
+      print(i);
+    }
   }
-
-  return a;
 }
 
-//EKUK
 
-int ekuk(int a, int b) {
-  if (a == 0 && b == 0) return 0;
-
-  int g = ekub(a, b);
-
-  return (a ~/ g).abs() * b.abs();
-}
+//isPalindrome
