@@ -1,15 +1,22 @@
 void main() {
-  print(rgbToHex(255,0,0));
+  print(checkPerfectNumber(28));
 }
 
-String rgbToHex(int r, int g, int b) {
-  r = r.clamp(0, 255);
-  g = g.clamp(0, 255);
-  b = b.clamp(0, 255);
+bool checkPerfectNumber(int n) {
+  if (n <= 1) return false;
 
-  String red = r.toRadixString(16).padLeft(2, '0');
-  String green = g.toRadixString(16).padLeft(2, '0');
-  String blue = b.toRadixString(16).padLeft(2, '0');
+  int sum = 1;
 
-  return '#${red + green + blue}'.toUpperCase();
+  for (int i = 2; i * i <= n; i++) {
+    if (n % i == 0) {
+      int pair = n ~/ i;
+      if (i != n) sum += i;
+
+      if (pair != n && pair != i) {
+        sum += pair;
+      }
+    }
+  }
+
+  return sum == n;
 }
