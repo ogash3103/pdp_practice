@@ -1,23 +1,18 @@
 void main() {
-  tubSon(45);
+  print(isPalindrome(12322));
 }
 
-void tubSon(int n) {
-  for (int i = 2; i <= n; i++) {
-    bool tub = true;
+bool isPalindrome(int n) {
+  if (n < 0) return false;
 
-    for (int j = 2; j < i; j++) {
-      if (i % j == 0) {
-        tub = false;
-        break;
-      }
-    }
+  int original = n;
+  int reverse = 0;
 
-    if (tub) {
-      print(i);
-    }
+  while (n > 0) {
+    int qoldiq = n % 10;
+    reverse = reverse * 10 + qoldiq;
+    n = n ~/ 10;
   }
+
+  return reverse == original;
 }
-
-
-//isPalindrome
