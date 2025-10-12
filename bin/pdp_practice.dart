@@ -1,9 +1,12 @@
 void main() {
-  print(fahrenheitToCelsius(68));
+  print(isTriangleAngles(60, 60 ,60));
 }
 
-double fahrenheitToCelsius(double farengeyt) {
-  double c = (farengeyt - 32) * 5 / 9;
+bool isTriangleAngles(int x, int y, int z) {
+  if (x <= 0 || y <= 0 || z <= 0) return false;
 
-  return c;
+  if (x + y + z == 180)
+    {return true;}
+  else
+    {return false;}
 }
