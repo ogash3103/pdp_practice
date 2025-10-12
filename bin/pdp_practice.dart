@@ -1,18 +1,15 @@
 void main() {
-  print(isPalindrome(12322));
+  print(rgbToHex(255,0,0));
 }
 
-bool isPalindrome(int n) {
-  if (n < 0) return false;
+String rgbToHex(int r, int g, int b) {
+  r = r.clamp(0, 255);
+  g = g.clamp(0, 255);
+  b = b.clamp(0, 255);
 
-  int original = n;
-  int reverse = 0;
+  String red = r.toRadixString(16).padLeft(2, '0');
+  String green = g.toRadixString(16).padLeft(2, '0');
+  String blue = b.toRadixString(16).padLeft(2, '0');
 
-  while (n > 0) {
-    int qoldiq = n % 10;
-    reverse = reverse * 10 + qoldiq;
-    n = n ~/ 10;
-  }
-
-  return reverse == original;
+  return '#${red + green + blue}'.toUpperCase();
 }
