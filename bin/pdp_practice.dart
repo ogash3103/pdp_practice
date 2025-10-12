@@ -1,34 +1,32 @@
 void main() {
-  print(tub(5));
-
-  print(TeskariSon(1234));
+  print(ekub(48, 18));
+  print(ekuk(48, 18));
 }
 
-// tub son topish method
-bool tub(int son) {
-  bool tubSon = true;
-  if (son <= 1) {
-    tubSon = false;
-  } else {
-    for (int i = 2; i <= son; i++) {
-      if (son % 2 == 0) {
-        tubSon = false;
-        break;
-      }
-    }
+//Kiritilgan a va b sonni
+//EKUB va EKUK ini hisoblovchi ikkita return type li funksiya
+
+int ekub(int a, int b) {
+  a = a.abs();
+  b = b.abs();
+
+  if (a == 0 && b == 0) return 0;
+
+  while (b != 0) {
+    int r = a % b;
+    a = b;
+    b = r;
   }
-  return tubSon;
+
+  return a;
 }
 
-// Berilgan sonni teskarisini chiqaruvchi return type li funksiya
+//EKUK
 
-int TeskariSon(int num) {
-  int rev = 0;
-  while (num > 0) {
-    int qoldiq = num % 10;
-    rev = rev * 10 + qoldiq;
-    num = num ~/ 10;
-  }
+int ekuk(int a, int b) {
+  if (a == 0 && b == 0) return 0;
 
-  return rev;
+  int g = ekub(a, b);
+
+  return (a ~/ g).abs() * b.abs();
 }
