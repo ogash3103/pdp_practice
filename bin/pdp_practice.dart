@@ -1,13 +1,10 @@
 void main() {
-  print(pow(2,3));
-  
-}
+  String starWithSpace = '* ';
+  String space = " ";
+  int column = 7;
 
-int pow(int a, int n) {
-  int natija = 1;
-  for (int i = 1; i <= n; i++) {
-    natija *= a;
+  for (int i = 0; i < column; i++) {
+    String row = space * (column - i) + starWithSpace * i;
+    print(row);
   }
-
-  return natija;
 }
