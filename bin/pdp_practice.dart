@@ -19,6 +19,13 @@ void main() {
   int result = countUpperCase(text);
 
   print("Katta harflar soni: $result");
+
+  //c) Berilgan sartni katta lotin harflarini kichikga,
+  //kichiklarini katta harflarga
+  //aylantiruvchi funksiya tuzilsin.
+  //Example: “FLuTTeR” => “flUttEr”
+
+  print(lettertoUpper("HELlo"));
 }
 
 //b) Satr berilgan.
@@ -35,4 +42,24 @@ int countUpperCase(String symbol) {
     }
   }
   return count;
+}
+//c) Berilgan sartni katta lotin harflarini kichikga,
+//kichiklarini katta harflarga
+//aylantiruvchi funksiya tuzilsin.
+//Example: “FLuTTeR” => “flUttEr”
+
+String lettertoUpper(String symbol) {
+  String result = '';
+
+  for (int i = 0; i < symbol.length; i++) {
+    int code = symbol.codeUnitAt(i);
+    if (code >= 65 && code <= 90) {
+      result += String.fromCharCode(code + 32);
+    } else if (code >= 97 && code <= 122) {
+      result += String.fromCharCode(code - 32);
+    } else {
+      print('Xato');
+    }
+  }
+  return result;
 }
