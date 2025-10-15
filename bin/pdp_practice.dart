@@ -1,21 +1,16 @@
+import 'dart:convert';
+
 void main() {
-  String str = "Dastrulash";
-  int index = 3;
+// n butun soni berilgan (32 <= n <= 126).
+// Unikodi n ga teng bo'lgan belgini
+// consolga chiqaruvchi dastur tuzing.
 
-  for (int i = 0; i < str.length; i++) {
-    print("$i - index => ${str[i]} -> ${str.codeUnitAt(i)}");
-  }
+  int n = 45;
 
-
-  if(index > 0 && index <= str.length)
-  {
-    String oldChar = str[index - 1];
-    int unicode = oldChar.codeUnitAt(0);
-
-    print("Index: $index");
-    print("Belgi: $oldChar");
-    print("Unicode: $unicode");
-  } else {
-    print("Xato! Index chegaradan tashqarida.");
+  if (n >= 32 || n <= 126) {
+    String symbol = String.fromCharCode(n);
+    print("Unicode: $n -> Belgi: $symbol");
+  }else{
+    print("Xato! $n qiymat 32 va 126 orasida bo'lishi kerak.");
   }
 }
