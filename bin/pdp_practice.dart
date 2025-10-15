@@ -1,8 +1,8 @@
 void main() {
-  String simFamilya = "O'g'abek Faxriddinov";
+  String str = "Dastrulash";
 
-  for (int i = 0; i < simFamilya.length; i++) {
-    print("$i - index ${simFamilya[i]} ${simFamilya.codeUnitAt(i)}");
+  for (int i = 0; i < str.length; i++) {
+    print("$i - index => ${str[i]} -> ${str.codeUnitAt(i)}");
   }
 
 }
