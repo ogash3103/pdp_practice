@@ -1,65 +1,14 @@
 void main() {
-// n butun soni berilgan (32 <= n <= 126).
-// Unikodi n ga teng bo'lgan belgini
-// consolga chiqaruvchi dastur tuzing.
+  //a) text1 va text2 satrlari berilgan.
+  //Agar text2 satri text1 satrida bo'lsa true,
+  //aks holda false chiqaruvchi dastur tuzing.
+  findTxt('Pdp Academy', 'hello');
 
-  int n = 45;
-
-  if (n >= 32 || n <= 126) {
-    String symbol = String.fromCharCode(n);
-    print("Unicode: $n -> Belgi: $symbol");
-  } else {
-    print("Xato! $n qiymat 32 va 126 orasida bo'lishi kerak.");
-  }
-
-  //b) Satr berilgan.
-  //Satrdagi katta lotin harflari
-  //sonini aniqlovchi funksiya tuzilsin.
-  String text = "HellO";
-  int result = countUpperCase(text);
-
-  print("Katta harflar soni: $result");
-
-  //c) Berilgan sartni katta lotin harflarini kichikga,
-  //kichiklarini katta harflarga
-  //aylantiruvchi funksiya tuzilsin.
-  //Example: “FLuTTeR” => “flUttEr”
-
-  print(lettertoUpper("HELlo"));
+  //b) Str satrini tarkibida ‘A’ harfi necha 
+  //marta borligini aniqlovchi dastur tuzing
 }
 
-//b) Satr berilgan.
-//Satrdagi katta lotin harflari
-//sonini aniqlovchi funksiya tuzilsin.
-
-int countUpperCase(String symbol) {
-  int count = 0;
-  for (int i = 0; i < symbol.length; i++) {
-    int code = symbol.codeUnitAt(i);
-    if (code >= 65 && code <= 90) {
-      count++;
-      print(symbol[i]);
-    }
-  }
-  return count;
-}
-//c) Berilgan sartni katta lotin harflarini kichikga,
-//kichiklarini katta harflarga
-//aylantiruvchi funksiya tuzilsin.
-//Example: “FLuTTeR” => “flUttEr”
-
-String lettertoUpper(String symbol) {
-  String result = '';
-
-  for (int i = 0; i < symbol.length; i++) {
-    int code = symbol.codeUnitAt(i);
-    if (code >= 65 && code <= 90) {
-      result += String.fromCharCode(code + 32);
-    } else if (code >= 97 && code <= 122) {
-      result += String.fromCharCode(code - 32);
-    } else {
-      print('Xato');
-    }
-  }
-  return result;
+void findTxt(String text1, String text2) {
+  bool result = text1.toLowerCase().contains(text2.toLowerCase());
+  print(result);
 }
