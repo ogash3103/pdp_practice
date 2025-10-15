@@ -8,9 +8,11 @@ void main() {
   //marta borligini aniqlovchi dastur tuzing
   findA('AAarfgAaA');
 
-  //c) text1 va text2 satrlari berilgan. 
-  //text2 satrini text1 satrida takrorlanishlar 
+  //c) text1 va text2 satrlari berilgan.
+  //text2 satrini text1 satrida takrorlanishlar
   //sonini chigaruvchi dastur tuzing.
+
+  repeatText('Dart bu dasturlash tili va Dart da Flutter', 'dart');
 }
 
 void findTxt(String text1, String text2) {
@@ -31,4 +33,22 @@ void findA(String str) {
     }
   }
   print(count);
+}
+
+//c) text1 va text2 satrlari berilgan.
+//text2 satrini text1 satrida takrorlanishlar
+//sonini chigaruvchi dastur tuzing.
+
+void repeatText(String text1, String text2) {
+  int count = 0;
+  int startIndex = 0;
+
+  while (true) {
+    int index = text1.toLowerCase().indexOf(text2.toLowerCase(), startIndex);
+    if (index == -1) break;
+
+    count++;
+    startIndex = index + text2.length;
+  }
+  print("Takrorlanishlar soni: $count");
 }
