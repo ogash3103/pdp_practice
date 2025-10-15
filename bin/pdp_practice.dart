@@ -4,11 +4,31 @@ void main() {
   //aks holda false chiqaruvchi dastur tuzing.
   findTxt('Pdp Academy', 'hello');
 
-  //b) Str satrini tarkibida ‘A’ harfi necha 
+  //b) Str satrini tarkibida ‘A’ harfi necha
   //marta borligini aniqlovchi dastur tuzing
+  findA('AAarfgAaA');
+
+  //c) text1 va text2 satrlari berilgan. 
+  //text2 satrini text1 satrida takrorlanishlar 
+  //sonini chigaruvchi dastur tuzing.
 }
 
 void findTxt(String text1, String text2) {
   bool result = text1.toLowerCase().contains(text2.toLowerCase());
   print(result);
+}
+
+void findA(String str) {
+  int count = 0;
+
+  for (int i = 0; i < str.length; i++) {
+    if (str[i] == 'A') {
+      count++;
+      print('katta A => $count');
+    } else if (str[i] == 'a') {
+      count++;
+      print('kichik a => $count');
+    }
+  }
+  print(count);
 }
