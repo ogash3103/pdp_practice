@@ -1,33 +1,25 @@
 void main() {
   // task a
-  print(replaceText('Flutter'));
-
-  // task b
-  print(strToNumber('12345'));
+  print(cutStr('stars'));
+  
 }
 
-//a) Kiritilgan satrni
-//teskari tartibda o’giruvchi
-//return typeli funksiya tuzing tuzilsin.
+//a) S satr berilgan. Agar satrning uzunligi toq bo'Isa,
+//o'rtadagi bitta belgisidan, agar juft bo'lsa,
+//o'rtadagi 2 ta belgisidan iborat satrni ajratib oling.
+//Masalan:
+//1) s="hovli" =› javob: result="v"
+//2) s="antiga" =› javob: result =“ti"
 
-String replaceText(String str) {
-  String reversedText = '';
-  for (int i = str.length - 1; i >= 0; i--) {
-    reversedText += str[i];
+String cutStr(String s) {
+  int len = s.length;
+
+  if (len % 2 == 1) {
+    int mid = len ~/ 2;
+    return s[mid];
+  } else {
+    int mid1 = len ~/ 2 - 1;
+    int mid2 = len ~/ 2;
+    return s[mid1] + s[mid2];
   }
-
-  return reversedText;
-}
-//b) Butun musbat sonni ifodalovchi satr berilgan.
-//Shu son raqamlari yig'indisini chiqaruvchi funksiya tuzilsin.
-
-int strToNumber(String str) {
-  int sum = 0;
-
-  for (int i = 0; i < str.length; i++) {
-    int num = int.parse(str[i]);
-    sum += num;
-  }
-
-  return sum;
 }
