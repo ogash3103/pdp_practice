@@ -1,43 +1,32 @@
 void main() {
   // task a
-  print(cutStr('stars'));
+  print(sameStarChar('xy*yzzz'));
 
   // task b
-  str('hello');
 }
 
-//a) S satr berilgan. Agar satrning uzunligi toq bo'Isa,
-//o'rtadagi bitta belgisidan, agar juft bo'lsa,
-//o'rtadagi 2 ta belgisidan iborat satrni ajratib oling.
-//Masalan:
-//1) s="hovli" =› javob: result="v"
-//2) s="antiga" =› javob: result =“ti"
+//a) Satr berilgan. Satrda har 1ta uchragan ‘*’
+//belgisidan 1ta oldingi va 1ta keyingi belgilar teng bo‘lsa,
+//true aks holatda false qaytaruvchi funksiya tuzing.
+//Agar‘*’dan 1ta oldin yoki 1ta keyin belgi bo'lmasa e'tiborga qarab.
+//sameStarChar("xy*yzz") → true
+//sameStarChar("xy*zzz") → false
+//sameStarChar("*xa*az") → true
 
-String cutStr(String s) {
-  int len = s.length;
-
-  if (len % 2 == 1) {
-    int mid = len ~/ 2;
-    return s[mid];
-  } else {
-    int mid1 = len ~/ 2 - 1;
-    int mid2 = len ~/ 2;
-    return s[mid1] + s[mid2];
+bool sameStarChar(String str) {
+  for (int i = 0; i < str.length; i++) {
+    if (str[i] == '*') {
+      if (i > 0 && i < str.length - 1) {
+        if (str[i - 1] != str[i + 1]) {
+          return false;
+        }
+      }
+    }
   }
+  return true;
 }
 
-//str satri va c belgisi berilgan.
-//str satrining har bir belgisidan keyin
-//c belgisini joylashtirib yangi satr hosil qiluvchi dastur tuzing.
-//Masalan: str=”hello”, c=’a’ bo’lsa,
-//natijaviy satr “haealalaoa” kabi bo’ladi.
-
-void str(String s) {
-  String c = 'a';
-  String str = '';
-
-  for (int i = 0; i < s.length; i++) {
-    str += s[i] + c;
-  }
-  print(str);
-}
+//b) Satr berilgan. Ushbu satrni birinchi 2ta harfini qaytaruvchi funksiya tuzing. Agar satr uzunligi 2 dan kichik bolsa, osha satrni ozini qaytaring.
+//firstTwo("Salom") → “Sa"
+//firstTwo("abcdefg") → "ab"
+//firstTwo("ab") → "ab"
