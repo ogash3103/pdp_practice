@@ -7,7 +7,8 @@ void main() {
   print(middleThree('Sarts'));
 
   // task c
-  
+
+  print(add('123', '34'));
 }
 
 // task a
@@ -25,3 +26,11 @@ String middleThree(String s) {
 }
 
 // task c
+
+String add(String str1, String str2) {
+  int sum1 = int.parse(str1);
+  int sum2 = int.parse(str2);
+  int sum = sum1 + sum2;
+
+  return sum.toString();
+}
