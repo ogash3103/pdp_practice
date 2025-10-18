@@ -3,6 +3,7 @@ void main() {
   print(replaceText('Flutter'));
 
   // task b
+  print(strToNumber('12345'));
 }
 
 //a) Kiritilgan satrni
@@ -16,4 +17,17 @@ String replaceText(String str) {
   }
 
   return reversedText;
+}
+//b) Butun musbat sonni ifodalovchi satr berilgan.
+//Shu son raqamlari yig'indisini chiqaruvchi funksiya tuzilsin.
+
+int strToNumber(String str) {
+  int sum = 0;
+
+  for (int i = 0; i < str.length; i++) {
+    int num = int.parse(str[i]);
+    sum += num;
+  }
+
+  return sum;
 }
