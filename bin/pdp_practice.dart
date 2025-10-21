@@ -1,19 +1,20 @@
 void main() {
-  final List<int> list = [7, 5, 2, 1, 3, 3, 6];
-  list.sort((a, b) => b.compareTo(a));
-  print(list);
+  final List<int> list1 = [1, 5, 2, 3, 4, 5, 6, 4, 6, 7];
+  final List<int> list2 = [6, 7, 1, 2, 3];
 
-  final List<int> reversedList = list.reversed.toList();
-  print(reversedList);
+  final seem = list1.where((item) => list2.contains(item)).toList();
+  print('uxshash elementlar $seem');
 
-  int n = 3;
-  int count = 0;
+  final unique = list1.toSet().toList();
+  print(unique);
 
-  for (var item in list) {
-    if (item == n) {
-      count++;
-    }
-  }
+  print('list 1 $list1');
+  print('list 2 $list2');
 
-  print(count);
+  print('===========');
+
+  final List<int> list3 = [34, 5, 23, 56, 1, 3, 45];
+
+  list3.sort((a, b) => b.compareTo(a));
+  print(list3);
 }
