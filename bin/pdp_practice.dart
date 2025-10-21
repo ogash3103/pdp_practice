@@ -1,34 +1,24 @@
 void main() {
-  List list = [
-    "pdp",
-    4,
-    "flutter best",
-    10.45,
-    "online",
-    1,
-    2.7,
-    3,
-    "android",
-    3.14
-  ];
-
-  final List<String> listString = [];
-  final List<int> listNumber = [];
-  final List<double> listDouble = [];
+  final List<int> list = [12, 34, 2, 35, 6];
+  int maxNum = list[0];
+  int minNum = list[0];
+  int sum = 0;
+  int n = 5;
 
   for (var item in list) {
-    if (item is String) {
-      listString.add(item);
-    } else if (item is int) {
-      listNumber.add(item);
-    } else if (item is double) {
-      listDouble.add(item);
-    } else {
-      print('xato');
+    if (item > maxNum) {
+      maxNum = item;
+    } else if (item < minNum) {
+      minNum = item;
     }
+    sum += item;
   }
 
-  print(listString);
-  print(listNumber);
-  print(listDouble);
+  double average = sum / list.length;
+  list.insert(0, n);
+  
+  print(list);
+  print("eng katta son: $maxNum");
+  print('eng kichik son: $minNum');
+  print('urta qiymat: $average');
 }
