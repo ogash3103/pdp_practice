@@ -1,11 +1,14 @@
 void main() {
-  int n = 3;
+  final list = ['apple', 'olma', 'apple'];
+  countElement(list);
+}
 
-  List<String> list = ['hello', 'pdp', 'academy', 'you can learn anything'];
-
-  if (n < list.length) {
-    print("n-chi element: ${list[n]}");
-  } else {
-    print("Error!");
-  }
+void countElement(List list) {
+  int count = 0;
+  list.forEach((item) {
+    if (item == 'apple') {
+      count++;
+    }
+  });
+  print(count);
 }
