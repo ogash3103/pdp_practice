@@ -1,14 +1,11 @@
 void main() {
-  final map = <String, String>{'a': 'aaa', 'b': 'aa'};
+  final map = <String, String>{"b": "aaa", "c": "cake"};
 
-  if (map.containsKey('a') && map.containsKey('b')) {
-
-    if(map['a'] == map['b'])
-    {
-      map.remove('a');
-      map.remove('b');
-    }
-    
+  if (map.containsKey('a')) {
+    map['b'] = map['a']!;
+  }else 
+  {
+    map['a'] = map['b']!;
   }
   print(map);
 }
