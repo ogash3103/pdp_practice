@@ -1,20 +1,46 @@
 void main() {
-  final List<int> list1 = [1, 5, 2, 3, 4, 5, 6, 4, 6, 7];
-  final List<int> list2 = [6, 7, 1, 2, 3];
+  List<int> list = [1, 2, 3, 5, 6, 8, 23, 1];
 
-  final seem = list1.where((item) => list2.contains(item)).toList();
-  print('uxshash elementlar $seem');
+  int a = 8;
+  int sum = 0;
 
-  final unique = list1.toSet().toList();
-  print(unique);
+  int max = list[0];
+  int secondMax = list[1];
 
-  print('list 1 $list1');
-  print('list 2 $list2');
+  if (secondMax > max) {
+    final temp = max;
+    max = secondMax;
+    secondMax = temp;
+  }
 
-  print('===========');
+  for (int i = 2; i < list.length; i++) {
+    if (list[i] > max) {
+      secondMax = max;
+      max = list[i];
+    } else if (list[i] > secondMax) {
+      secondMax = list[i];
+    }
+  }
 
-  final List<int> list3 = [34, 5, 23, 56, 1, 3, 45];
+  print('Eng katta son: $max');
+  print('Ikkinchi eng katta son: $secondMax');
 
-  list3.sort((a, b) => b.compareTo(a));
-  print(list3);
+  print('=====task 2=====');
+
+  for (int i = 0; i < list.length; i++) {
+    for (int j = i + 1; j < list.length; j++) {
+      if (list[i] + list[j] == a) {
+        print('${list[i]} + ${list[j]} = $a');
+      }
+    }
+  }
+
+  print('===task 3====');
+
+  final unique = list.toSet();
+
+  for (var item in unique) {
+    final count = list.where((e) => e == item).length;
+    print('$item soni $count marta qatnashgan');
+  }
 }
