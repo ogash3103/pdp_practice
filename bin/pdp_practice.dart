@@ -1,8 +1,9 @@
 void main() {
   final map = <String, String>{'a': 'coddy', 'b': 'hello'};
-  if (map.containsKey('a') && map['a']!.isNotEmpty) {
+  if (map.containsKey('a')) {
     map['b'] = map['a']!;
-    map['a'] = '';
   }
+  map.remove('c');
+
   print(map);
 }
