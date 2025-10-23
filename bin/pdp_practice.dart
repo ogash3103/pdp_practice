@@ -1,11 +1,14 @@
 void main() {
-  final map = <String, String>{'potato': 'ketchup', 'salad': 'oil'};
+  final map = <String, String>{'a': 'aaa', 'b': 'aa'};
 
-  if (map.containsKey('ice cream')) {
-    map['fries'] = map['patato']!;
+  if (map.containsKey('a') && map.containsKey('b')) {
+
+    if(map['a'] == map['b'])
+    {
+      map.remove('a');
+      map.remove('b');
+    }
+    
   }
-
-  if (map.containsKey('salad')) map['spinach'] = map['salad']!;
-
   print(map);
 }
