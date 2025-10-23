@@ -1,11 +1,10 @@
 void main() {
-  final map = <String, String>{'ice cream': 'apple', 'bread': 'banana'};
+  final map = <String, String>{'ice cream': 'apple', 'spinach': 'banana'};
 
-  if (map.containsKey('ice cream')) {
-    map['ice cream'] = 'cherry';
-  }
+  if (map.containsKey('ice cream')) map['yogurt'] = map['ice cream']!;
+  
+  if(map.containsKey('spinach')) map['spinach'] = 'nuts';
 
-  map['bread'] = 'better';
 
   print(map);
 }
