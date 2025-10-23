@@ -1,9 +1,9 @@
 void main() {
-  final map = <String, String>{'a': 'coddy', 'b': 'hello'};
-  if (map.containsKey('a')) {
-    map['b'] = map['a']!;
+  final map = <String, String>{'a': 'Hi', 'b': 'there', 'c': 'Bro'};
+
+  if (map.containsKey('a') && map.containsKey('b')) {
+    map['ab'] = map['a']! + map['b']!;
   }
-  map.remove('c');
 
   print(map);
 }
