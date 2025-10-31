@@ -1,29 +1,28 @@
-import 'PracticeCass2.dart';
-
 void main() {
-  var car = Vehicle("Tayota", "Camry", 2020);
-  car.displayInfo();
+  final n = 21;
+  final (prev, next) = neighborsFib(n);
+  print('n = $n => oldingi: $prev, keyngi: $next');
+}
 
-  final cat = Animals("Mittens", "Cat", 3);
-  cat.makeSound();
+(int prev, int next) neighborsFib(int n) {
+  if (n <= 1) {
+    throw ArgumentError('n > 1 bo\'lishi kerak');
+  }
 
-  var phone = Device("iPhone", "Apple");
-  phone.turnOn();
+  int a = 1;
+  int b = 1;
 
-  var group = Group("Developers", ["Ali", "Vali"]);
-  group.addMember("Sami");
+  while (b < n) {
+    final int c = a + b;
+    a = b;
+    b = c;
+  }
 
-  var ssd = Storage(512, 120);
-  ssd.save(50);
+  if (b != n) {
+    throw ArgumentError('n Fibonachchi soni emas!');
+  }
 
-  var flutter = Course("Flutter Develpment", "John Doe", 40);
-  flutter.startCourse();
-
-  var emp = Employee("Sara", 'Manager', 8000);
-
-  var catg = Category("Programming", "Ali coding related stuff");
-  catg.showCategory();
-
-  var note = Note("Daily Goal", "Finish Flutter modul 5", DateTime.now());
-  note.displayNote();
+  final int prev = a;
+  final int next = a + b;
+  return (prev, next);
 }
